@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SNOWMAN KORAT</title>
+
+<style>
+body {margin:0;font-family:Arial;background:#fff;color:#222}
+header {background:linear-gradient(90deg,#d80000,#0033cc);color:white;padding:20px;text-align:center}
+nav {background:#0033cc;padding:10px;text-align:center}
+nav a {color:white;margin:0 15px;text-decoration:none;font-weight:bold}
+section {padding:40px 20px}
+h2 {color:#0033cc}
+.hero {background:url('https://images.unsplash.com/photo-1517927033932-b3d18e61fb3a?q=80&w=1400') center/cover;height:400px;color:white;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
+.hero h1 {font-size:40px;margin:0}
+.hero p {font-size:20px}
+.btn {background:#d80000;color:white;padding:10px 20px;border:none;cursor:pointer;margin-top:10px}
+.products {display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.card {border:1px solid #ddd;padding:15px;border-radius:10px;text-align:center}
+.card img {width:100%;height:250px;object-fit:cover;border-radius:10px}
+footer {background:#0033cc;color:white;text-align:center;padding:20px;margin-top:30px}
+input, select, textarea {width:100%;padding:8px;margin:5px 0}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>SNOWMAN KORAT</h1>
+<p>โปรรีวิวคืนเงิน 10% | มัดจำเท่าราคาเช่า</p>
+</header>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#products">Products</a>
+<a href="#booking">Booking</a>
+<a href="#how">How It Works</a>
+<a href="#terms">Terms</a>
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<section id="home" class="hero">
+<h1>เช่าชุดกันหนาว ไปต่างประเทศแบบมั่นใจ</h1>
+<p>เริ่มต้น 800 - 2000 บาท / 7 วัน</p>
+<label>เลือกวันเช่า</label>
+<input type="date">
+<input type="date">
+<button class="btn">เช่าทันที</button>
+</section>
+
+<section id="products">
+<h2>MEN COLLECTION</h2>
+<div class="products">
+<div class="card">
+<img src="https://images.unsplash.com/photo-1548883354-7622d03aca27?q=80&w=800">
+<h3>M-JK01 Alpine Black</h3>
+<p>1,200 บาท / 7 วัน</p>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1520975922203-bf2b0c89de0e?q=80&w=800">
+<h3>M-PK01 Snowfield Long</h3>
+<p>1,900 บาท / 7 วัน</p>
+</div>
+</div>
+
+<h2>WOMEN COLLECTION</h2>
+<div class="products">
+<div class="card">
+<img src="https://images.unsplash.com/photo-1485968579580-b6d095142e6e?q=80&w=800">
+<h3>W-JK01 Aurora Pink</h3>
+<p>1,300 บาท / 7 วัน</p>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1516822003754-cca485356ecb?q=80&w=800">
+<h3>W-PK01 Arctic Queen</h3>
+<p>2,000 บาท / 7 วัน</p>
+</div>
+</div>
+
+<h2>KIDS COLLECTION</h2>
+<div class="products">
+<div class="card">
+<img src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?q=80&w=800">
+<h3>K-JK01 Little Polar</h3>
+<p>900 บาท / 7 วัน</p>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1517685352821-92cf88aee5a5?q=80&w=800">
+<h3>K-SS01 Tiny Blizzard</h3>
+<p>1,400 บาท / 7 วัน</p>
+</div>
+</div>
+</section>
+
+<section id="booking">
+<h2>ระบบจอง</h2>
+<label>เลือกสินค้า</label>
+<select>
+<option>M-JK01</option>
+<option>M-PK01</option>
+<option>W-JK01</option>
+<option>W-PK01</option>
+<option>K-JK01</option>
+</select>
+<label>วันรับ</label>
+<input type="date">
+<label>วันคืน</label>
+<input type="date">
+<label>จำนวน</label>
+<input type="number" min="1">
+<label>ชื่อ-นามสกุล</label>
+<input type="text">
+<label>เบอร์โทร</label>
+<input type="text">
+<label>LINE ID</label>
+<input type="text">
+<label>วิธีรับสินค้า</label>
+<select>
+<option>รับหน้าร้าน</option>
+<option>จัดส่งทางไปรษณีย์</option>
+</select>
+<button class="btn">ยืนยันการจอง</button>
+</section>
+
+<section id="how">
+<h2>วิธีเช่า</h2>
+<ol>
+<li>เลือกชุดและวันที่</li>
+<li>รอทีมงานยืนยัน</li>
+<li>รับสินค้าก่อนเดินทาง</li>
+<li>คืนสินค้าภายในบ่าย 2 ของวันสุดท้าย</li>
+</ol>
+</section>
+
+<section id="terms">
+<h2>เงื่อนไขการเช่า</h2>
+<p>- ไม่สามารถยกเลิกได้ทุกกรณี</p>
+<p>- คืนสินค้าภายในบ่าย 2 ของวันสุดท้ายที่เช่า</p>
+<p>- มัดจำเท่าราคาเช่า</p>
+</section>
+
+<section id="about">
+<h2>เกี่ยวกับเรา</h2>
+<p>ร้านตั้งอยู่โครงการเวนิสโคราช</p>
+<p>เสื้อสวย ราคากันเอง ดูแลลูกค้าเหมือนเพื่อน</p>
+</section>
+
+<section id="contact">
+<h2>ติดต่อเรา</h2>
+<p>โทร: 094-8916441</p>
+<p>LINE: snowman.korat</p>
+</section>
+
+<footer>
+© 2026 SNOWMAN KORAT
+</footer>
+
+</body>
+</html>
