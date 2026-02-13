@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SNOWMAN KORAT</title>
+
+<link rel="manifest" href="manifest.json">
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #ffffff;
+}
+
+header {
+    background: linear-gradient(90deg,#d90000,#0033cc);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.container {
+    padding: 20px;
+}
+
+.card {
+    border: 2px solid #0033cc;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+button {
+    background: #d90000;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #a80000;
+}
+
+input, select {
+    padding: 8px;
+    margin: 5px 0;
+    width: 100%;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #0033cc;
+    color: white;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>SNOWMAN KORAT</h1>
+<p>เช่าชุดกันหนาว | 800 - 2000 บาท / 7 วัน</p>
+</header>
+
+<div class="container">
+
+<h2>ค้นหารหัสสินค้า</h2>
+<input type="text" id="search" placeholder="เช่น SN001" onkeyup="searchItem()">
+
+<div id="items"></div>
+
+<h2>รายการจอง</h2>
+<div id="bookingList"></div>
+
+</div>
+
+<footer>
+<p>ส่งทางไปรษณีย์ หรือ มารับหน้าร้าน</p>
+<p>มัดจำเท่าราคาเช่า</p>
+</footer>
+
+<script>
+let products = [];
+for(let i=1;i<=20;i++){
+    products.push({code:"SN"+String(i).padStart(3,'0'),price:800});
+}
+
+let bookings = [];
+
+function renderProducts(list){
+    let html="";
+    list.forEach(p=>{
+        html+=`
+        <div class="card">
+            <h3>${p.code}</h3>
+            <p>ราคา: ${p.price} บาท / 7 วัน</p>
+            <label>วันที่เช่า</label>
+            <input type="date" id="date-${p.code}">
+            <button onclick="bookItem('${p.code}',${p.price})">จอง</button>
+        </div>
+        `;
+    });
+    document.getElementById("items").innerHTML=html;
+}
+
+function searchItem(){
+    let keyword=document.getElementById("search").value.toUpperCase();
+    let filtered=products.filter(p=>p.code.includes(keyword));
+    renderProducts(filtered);
+}
+
+function bookItem(code,price){
+    let date=document.getElementById("date-"+code).value;
+    if(!date){
+        alert("กรุณาเลือกวันที่");
+        return;
+    }
+    bookings.push({code,date,price});
+    renderBookings();
+    alert("จองสำเร็จ");
+}
+
+function renderBookings(){
+    let html="";
+    bookings.forEach(b=>{
+        html+=`
+        <div class="card">
+            <p>รหัส: ${b.code}</p>
+            <p>วันที่เช่า: ${b.date}</p>
+            <p>ค่าเช่า: ${b.price} บาท</p>
+            <p>มัดจำ: ${b.price} บาท</p>
+        </div>
+        `;
+    });
+    document.getElementById("bookingList").innerHTML=html;
+}
+
+renderProducts(products);
+</script>
+
+</body>
+</html>
